@@ -1,7 +1,8 @@
-package com.example.jyfpokemongomvvm
+package com.example.jyfpokemongomvvm.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.jyfpokemongomvvm.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
