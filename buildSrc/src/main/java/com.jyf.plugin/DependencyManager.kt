@@ -8,6 +8,13 @@ object Versions {
 
     // DataBinding
     const val jDatabinding = "1.0.1"
+
+    // Kotlin core
+    const val coreKtx = "1.3.0"
+}
+
+object AndroidX {
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
 }
 
 object Hilt {
@@ -18,5 +25,5 @@ object Hilt {
 }
 
 object Depend {
-    val jDatabinding = "com.hi-dhl:jdatabinding:${Versions.jDatabinding}"
+    const val jDatabinding = "com.hi-dhl:jdatabinding:${Versions.jDatabinding}"
 }
