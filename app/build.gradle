@@ -1,3 +1,5 @@
+import com.jyf.plugin.BuildConfig
+import com.jyf.plugin.Depend
 import com.jyf.plugin.Hilt
 
 plugins {
@@ -9,15 +11,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.2"
+    compileSdkVersion BuildConfig.compileSdkVersion
+    buildToolsVersion BuildConfig.buildToolsVersion
 
     defaultConfig {
         applicationId "com.example.jyfpokemongomvvm"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,9 +49,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Hilt 依赖注入库
     implementation Hilt.daggerRuntime
     kapt Hilt.daggerCompiler
-
     implementation Hilt.viewModule
     kapt Hilt.compiler
+
+    // DataBinding库
+    implementation Depend.jDatabinding
 }
