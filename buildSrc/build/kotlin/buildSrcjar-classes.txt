@@ -1,0 +1,1 @@
+/Users/jiayuanfa/AndroidStudioProjects/JYFPokemonGoMVVM/buildSrc/build/classes/kotlin/main/com/jyf/plugin/BuildConfig.class:/Users/jiayuanfa/AndroidStudioProjects/JYFPokemonGoMVVM/buildSrc/build/classes/kotlin/main/com/jyf/plugin/Hilt.class:/Users/jiayuanfa/AndroidStudioProjects/JYFPokemonGoMVVM/buildSrc/build/classes/kotlin/main/com/jyf/plugin/Versions.class
