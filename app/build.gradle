@@ -1,7 +1,10 @@
 import com.jyf.plugin.AndroidX
+import com.jyf.plugin.Anko
 import com.jyf.plugin.BuildConfig
+import com.jyf.plugin.Coil
 import com.jyf.plugin.Depend
 import com.jyf.plugin.Hilt
+import com.jyf.plugin.Kt
 
 plugins {
     id 'com.android.application'
@@ -41,7 +44,9 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // Kotlin
+    implementation Kt.stdlibJdk8
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
@@ -60,4 +65,16 @@ dependencies {
 
     // AndroidX
     implementation AndroidX.coreKtx
+
+    // Coil图片加载库 + 协程库
+    implementation Coil.runtime
+
+    // Paging3数据管理框架
+    implementation AndroidX.pagingRuntime
+
+    // Kotlin 协程 Flow
+//    implementation Anko.coroutines
+
+    // Anko
+//    implementation Anko.common
 }
