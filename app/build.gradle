@@ -3,8 +3,11 @@ import com.jyf.plugin.Anko
 import com.jyf.plugin.BuildConfig
 import com.jyf.plugin.Coil
 import com.jyf.plugin.Depend
+import com.jyf.plugin.Fragment
 import com.jyf.plugin.Hilt
 import com.jyf.plugin.Kt
+import com.jyf.plugin.Retrofit
+import com.jyf.plugin.Room
 
 plugins {
     id 'com.android.application'
@@ -40,6 +43,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -53,6 +60,17 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Room
+    implementation Room.runtime
+    kapt Room.compiler  // 防止报重复引用的错误
+    implementation Room.ktx
+
+    // gson
+    implementation Retrofit.gson
+
+    // retrofit
+    implementation Retrofit.runtime
 
     // Hilt 依赖注入库
     implementation Hilt.daggerRuntime
@@ -77,4 +95,7 @@ dependencies {
 
     // Anko
 //    implementation Anko.common
+
+    // Fragment
+    implementation Fragment.runtimeKtx
 }

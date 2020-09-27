@@ -23,6 +23,32 @@ object Versions {
 
     // Paging3数据管理框架
     const val paging = "3.0.0-alpha02"
+
+    // Retrofit、gson
+    const val retrofit = "2.9.0"
+
+    // Room 数据库
+    const val room = "2.3.0-alpha01"
+
+    const val fragment = "1.3.0-alpha06"
+}
+
+object Fragment {
+    const val runtimeKtx = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+}
+
+object Room {
+    const val runtime = "androidx.room:room-runtime:${Versions.room}"
+    const val compiler = "androidx.room:room-compiler:${Versions.room}"
+    const val ktx = "androidx.room:room-ktx:${Versions.room}"
+    const val rxjava2 = "androidx.room:room-rxjava2:${Versions.room}"
+    const val testing = "androidx.room:room-testing:${Versions.room}"
+}
+
+object Retrofit {
+    const val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val runtime = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+//    const val logging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpLogging}"
 }
 
 object Coil {
