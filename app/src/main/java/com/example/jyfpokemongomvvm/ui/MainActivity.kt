@@ -2,6 +2,7 @@ package com.example.jyfpokemongomvvm.ui
 
 import android.os.Bundle
 import com.example.jyfpokemongomvvm.R
+import com.example.jyfpokemongomvvm.databinding.ActivityMainBinding
 import com.hi.dhl.jdatabinding.DataBindingAppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -10,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
  * 术语：依赖注入 Hilt
  * 2：继承DataBindingAppCompatActivity以实现DataBinding功能
  */
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class MainActivity : DataBindingAppCompatActivity() {
 
 //    private val mBinding: ActivityMainBinding by binding(R.layout.activity_main)

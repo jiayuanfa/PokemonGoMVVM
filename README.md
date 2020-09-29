@@ -18,3 +18,5 @@
 - 编写Pokemon项目的数据库文件、以及数据库的操作类 2020.9.24
 - 引入Fragment.runtimeKtx以编写MainViewModel，主要用到了里面的viewModelScope，为了旋转屏幕数据不丢失 2020.9.27
 - 编写MainViewModel
+- 引入下拉加载刷新库 2020.9.28
+- 顶部MotionLayout动画编写 2020.9.29

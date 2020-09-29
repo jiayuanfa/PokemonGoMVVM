@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#FA6555</color>
+    <color name="colorPrimaryDark">#FA6555</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="recycle_item_press">#9FB6B6B6</color>
+    <color name="color_light_teal">#2CDAB1</color>
+    <color name="color_progress_bg">#FFDBDBDB</color>
+    <color name="color_progress_1">#d5429a</color>
+    <color name="color_progress_2">#f99655</color>
+    <color name="color_progress_3">#6ebb83</color>
+    <color name="color_progress_4">#f9cb75</color>
+    <color name="color_progress_5">#7ba7f2</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="head_bg_red">#FA6555</color>
 </resources>

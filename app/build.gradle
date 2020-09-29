@@ -98,4 +98,7 @@ dependencies {
 
     // Fragment
     implementation Fragment.runtimeKtx
+
+    // 下拉刷新
+    implementation AndroidX.swiperefreshlayout
 }

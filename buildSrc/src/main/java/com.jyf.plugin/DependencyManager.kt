@@ -31,6 +31,8 @@ object Versions {
     const val room = "2.3.0-alpha01"
 
     const val fragment = "1.3.0-alpha06"
+    // 下拉刷新库
+    const val swiperefreshlayout = "1.0.0"
 }
 
 object Fragment {
@@ -62,6 +64,8 @@ object Kt {
 object AndroidX {
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val pagingRuntime = "androidx.paging:paging-runtime:${Versions.paging}"
+    const val swiperefreshlayout =
+        "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swiperefreshlayout}"
 }
 
 object Hilt {
