@@ -1,5 +1,6 @@
 package com.example.jyfpokemongomvvm.data.local
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -12,6 +13,7 @@ import com.example.jyfpokemongomvvm.data.entity.PokemonInfoEntity
  *     desc  :
  * </pre>
  */
+@Dao
 interface PokemonInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPokemon(pokemonInfoEntity: PokemonInfoEntity)

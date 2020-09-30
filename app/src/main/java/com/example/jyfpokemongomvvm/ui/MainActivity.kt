@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
  * 术语：依赖注入 Hilt
  * 2：继承DataBindingAppCompatActivity以实现DataBinding功能
  */
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : DataBindingAppCompatActivity() {
 
 //    private val mBinding: ActivityMainBinding by binding(R.layout.activity_main)

@@ -9,13 +9,11 @@ import com.jyf.plugin.Kt
 import com.jyf.plugin.Retrofit
 import com.jyf.plugin.Room
 
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion BuildConfig.compileSdkVersion
@@ -41,7 +39,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
     }
 
     buildFeatures {
@@ -101,4 +100,7 @@ dependencies {
 
     // 下拉刷新
     implementation AndroidX.swiperefreshlayout
+
+    // Timber
+    implementation Depend.timber
 }

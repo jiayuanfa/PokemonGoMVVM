@@ -20,7 +20,7 @@ import com.example.jyfpokemongomvvm.data.entity.RemoteKeysEntity
 )
 @TypeConverters(value = [LocalTypeConverter::class])
 abstract class AppDataBase : RoomDatabase() {
-    abstract class pokemonDao(): PokemonDao
-    abstract class pokemonInfoDao(): PokemonInfoDao
-    abstract class remoteKeysDao(): RemoteKeysDao
+    abstract fun pokemonDao(): PokemonDao
+    abstract fun pokemonInfoDao(): PokemonInfoDao
+    abstract fun remoteKeysDao(): RemoteKeysDao
 }

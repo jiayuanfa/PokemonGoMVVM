@@ -31,8 +31,12 @@ object Versions {
     const val room = "2.3.0-alpha01"
 
     const val fragment = "1.3.0-alpha06"
+
     // 下拉刷新库
     const val swiperefreshlayout = "1.0.0"
+
+    // Timber
+    const val timber = "4.7.1"
 }
 
 object Fragment {
@@ -77,6 +81,7 @@ object Hilt {
 
 object Depend {
     const val jDatabinding = "com.hi-dhl:jdatabinding:${Versions.jDatabinding}"
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
 
 object Anko {

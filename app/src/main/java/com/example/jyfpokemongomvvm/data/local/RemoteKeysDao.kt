@@ -1,5 +1,6 @@
 package com.example.jyfpokemongomvvm.data.local
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -12,6 +13,7 @@ import com.example.jyfpokemongomvvm.data.entity.RemoteKeysEntity
  *     desc  :
  * </pre>
  */
+@Dao
 interface RemoteKeysDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(remoteKeysEntity: RemoteKeysEntity)
@@ -20,5 +22,5 @@ interface RemoteKeysDao {
     suspend fun getRemoteKeys(name: String): RemoteKeysEntity?
 
     @Query("DELETE FROM RemoteKeysEntity where remoteName = :name")
-    suspend fun clearRemoteKey(name: String)
+    suspend fun clearRemoteKeys(name: String)
 }

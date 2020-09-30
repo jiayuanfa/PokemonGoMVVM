@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="mainViewModel"-->
-<!--            type="com.example.jyfpokemongomvvm.ui.main.MainViewModel" />-->
-<!--    </data>-->
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.example.jyfpokemongomvvm.ui.main.MainViewModel" />
+    </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
