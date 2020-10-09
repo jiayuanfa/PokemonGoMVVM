@@ -10,6 +10,7 @@ import coil.api.load
 import com.example.jyfpokemongomvvm.R
 import com.example.jyfpokemongomvvm.model.PokemonInfoModel
 import com.example.jyfpokemongomvvm.model.PokemonItemModel
+import com.example.jyfpokemongomvvm.ui.MainActivity
 import com.example.jyfpokemongomvvm.ui.detail.AlbumAdapter
 import com.example.jyfpokemongomvvm.ui.detail.DetailActivity
 import com.hi.dhl.jprogressview.JProgressView

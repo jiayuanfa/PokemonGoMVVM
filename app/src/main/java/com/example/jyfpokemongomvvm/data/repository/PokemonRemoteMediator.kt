@@ -11,6 +11,7 @@ import com.example.jyfpokemongomvvm.data.entity.RemoteKeysEntity
 import com.example.jyfpokemongomvvm.data.local.AppDataBase
 import com.example.jyfpokemongomvvm.data.remote.PokemonService
 import com.example.jyfpokemongomvvm.ext.isConnectedNetwork
+import com.example.jyfpokemongomvvm.ui.MainActivity
 import retrofit2.HttpException
 import timber.log.Timber
 import java.io.IOException
@@ -19,7 +20,7 @@ import java.io.IOException
  * <pre>
  *     author: Jafar
  *     date  : 2020/9/29
- *     desc  :
+ *     desc  : 数据处理者
  * </pre>
  */
 @OptIn(ExperimentalPagingApi::class)
@@ -68,16 +69,15 @@ class PokemonRemoteMediator(
                      * 方式二：比较麻烦，当前分页数据没有对应的远程 key，这个时候需要我们自己建表,
                      */
 
+
                     /**
                      * 方式一：这种方式比较简单，当前页面最后一条数据是下一页的开始位置
                      * 通过 load 方法的参数 state 获取当页面最后一条数据
                      */
-                    val lastItem = state.lastItemOrNull()
-                    if (lastItem == null) {
-                        return MediatorResult.Success(
-                                endOfPaginationReached = true
+                    val lastItem = state.lastItemOrNull() ?:
+                    return MediatorResult.Success(
+                            endOfPaginationReached = true
                         )
-                    }
                     lastItem.page
 
                     /**
@@ -95,17 +95,18 @@ class PokemonRemoteMediator(
 
             if (!AppHelper.mContext.isConnectedNetwork()) {
                 // 无网络加载本地数据
+                Timber.tag(MainActivity.TAG).d("没有网络加载本地数据")
                 return MediatorResult.Success(endOfPaginationReached = true)
             }
 
-            // 第二步： 请问网络分页数据
+            // 第二步： 请求网络分页数据
             val page = pageKey ?: 0
             val result = api.fetchPokemonList(
                     state.config.pageSize,
                     page * state.config.pageSize
             ).results
             Timber.tag(TAG).e(result.toString())
-
+            Timber.tag(MainActivity.TAG).d("请求网络数据 页码为$page")
             val endOfPaginationReached = result.isEmpty()
 
             val item = result.map {
@@ -120,6 +121,7 @@ class PokemonRemoteMediator(
             // 第三步： 插入数据库
             db.withTransaction {
                 if (loadType == LoadType.REFRESH) {
+                    Timber.tag(MainActivity.TAG).d("第一次加载，清空数据库")
                     remoteKeysDao.clearRemoteKeys(remotePokemon)
                     pokemonDao.clearPokemon(remotePokemon)
                 }
@@ -128,6 +130,7 @@ class PokemonRemoteMediator(
                         remoteName = remotePokemon,
                         nextKey = nextKey
                 )
+                Timber.tag(MainActivity.TAG).d("拿到数据，插入数据库")
                 remoteKeysDao.insertAll(entity)
                 pokemonDao.insertPokemon(item)
             }

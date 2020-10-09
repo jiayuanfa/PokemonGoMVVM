@@ -14,6 +14,7 @@ import com.hi.dhl.jdatabinding.DataBindingAppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.flow.collectLatest
+import timber.log.Timber
 
 /**
  * 1：此处引入@AndroidEntryPoint是为了让外界省去初始化的步骤，就可以直接使用该类
@@ -23,6 +24,9 @@ import kotlinx.coroutines.flow.collectLatest
 @AndroidEntryPoint
 class MainActivity : DataBindingAppCompatActivity() {
 
+    companion object {
+        const val TAG = "jyfLog"
+    }
     private val mBinding: ActivityMainBinding by binding(R.layout.activity_main)
     private val mViewModel: MainViewModel by viewModels()
     private val mPokemonAdapter by lazy {
@@ -33,12 +37,15 @@ class MainActivity : DataBindingAppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         mBinding.apply {
+            Timber.tag(MainActivity.TAG).d("设置Adapter")
             mRv.adapter = mPokemonAdapter.withLoadStateFooter(FooterAdapter(mPokemonAdapter))
+            Timber.tag(MainActivity.TAG).d("设置XML中的Model")
             mainViewModel = mViewModel
             lifecycleOwner = this@MainActivity
         }
 
         mViewModel.postOfData().observe(this, Observer {
+            Timber.tag(TAG).d("拿到数据，刷新列表")
             mPokemonAdapter.submitData(lifecycle, it)
             swipeRefresh.isEnabled = false
         })

@@ -5,6 +5,7 @@ import android.os.StrictMode
 import androidx.startup.Initializer
 import com.example.jyfpokemongomvvm.AppHelper
 import com.example.jyfpokemongomvvm.BuildConfig
+import com.example.jyfpokemongomvvm.ui.MainActivity
 import timber.log.Timber
 
 class AppInitializer :  Initializer<Unit>{
@@ -18,6 +19,7 @@ class AppInitializer :  Initializer<Unit>{
         StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build())
         Timber.plant(Timber.DebugTree())
         AppHelper.init(context)
+        Timber.tag(MainActivity.TAG).d("初始化AppContext")
         return Unit
     }
 

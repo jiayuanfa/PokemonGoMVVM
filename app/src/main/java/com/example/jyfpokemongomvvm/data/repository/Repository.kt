@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 /**
  * 数据仓库
+ * 这个类负责获取数据
  */
 interface Repository {
 
