@@ -37,6 +37,10 @@ object Versions {
 
     // Timber
     const val timber = "4.7.1"
+
+    const val progressview = "1.0.0"
+
+    const val appStartup = "1.0.0-alpha01"
 }
 
 object Fragment {
@@ -70,6 +74,7 @@ object AndroidX {
     const val pagingRuntime = "androidx.paging:paging-runtime:${Versions.paging}"
     const val swiperefreshlayout =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swiperefreshlayout}"
+    const val appStartup = "androidx.startup:startup-runtime:${Versions.appStartup}"
 }
 
 object Hilt {
@@ -82,6 +87,7 @@ object Hilt {
 object Depend {
     const val jDatabinding = "com.hi-dhl:jdatabinding:${Versions.jDatabinding}"
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+    const val progressview = "com.hi-dhl:progressview:${Versions.progressview}"
 }
 
 object Anko {

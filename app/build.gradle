@@ -103,4 +103,10 @@ dependencies {
 
     // Timber
     implementation Depend.timber
+
+    // ProgressView
+    implementation Depend.progressview
+
+    // Start Up
+    implementation AndroidX.appStartup
 }

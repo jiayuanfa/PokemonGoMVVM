@@ -22,4 +22,7 @@
 - 顶部MotionLayout动画编写 2020.9.29
 - 解决@OptIn注解的报错问题并同步app和project两个里面的kotlin版本 2020.9.30
 - 添加Mapper类，数据往外面转一层，防止由于服务器数据的变化 错误引起的大规模修改业务的问题
-
+- 编写ViewBinding类    2020.10.9
+- 编写MainActivity类
+- 添加AppInit类，以及StrictMode性能调优策略
+- 添加StartUp App启动库，优化DEBUG模式下编译和启动的时间

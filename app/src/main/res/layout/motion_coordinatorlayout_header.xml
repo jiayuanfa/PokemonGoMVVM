@@ -33,8 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/CircleImageView"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        />
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/name"
@@ -51,6 +50,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
+
 </com.example.jyfpokemongomvvm.utils.CollapsibleToolbar>
